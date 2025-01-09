@@ -1,0 +1,5 @@
+17:02:06.546 [main] INFO  testCases.tc_Login_001 - ****Starting tc_Login_001****
+17:02:06.795 [main] INFO  testCases.tc_Login_001 - entering email into email text field
+17:02:06.927 [main] INFO  testCases.tc_Login_001 - clicked on continue button
+17:02:07.697 [main] INFO  testCases.tc_Login_001 - entering password into password textfield
+17:02:07.842 [main] INFO  testCases.tc_Login_001 - clicked on login button

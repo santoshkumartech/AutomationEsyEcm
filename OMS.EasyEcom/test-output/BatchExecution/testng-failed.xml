@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [BatchExecution]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="OrdersModule(failed)">
+    <classes>
+      <class name="testCases.OrdersModule">
+        <methods>
+          <include name="teardownTest"/>
+          <include name="tearDown"/>
+          <include name="configureTestReport"/>
+          <include name="Order_Tc002"/>
+          <include name="setup"/>
+          <include name="setupTest"/>
+          <include name="setupReport"/>
+          <include name="flushReport"/>
+        </methods>
+      </class> <!-- testCases.OrdersModule -->
+    </classes>
+  </test> <!-- OrdersModule(failed) -->
+  <test thread-count="5" name="LoginModule(failed)">
+    <classes>
+      <class name="testCases.loginModule">
+        <methods>
+          <include name="teardownTest"/>
+          <include name="tearDown"/>
+          <include name="configureTestReport"/>
+          <include name="Login_Tc002"/>
+          <include name="setup"/>
+          <include name="setupTest"/>
+          <include name="setupReport"/>
+          <include name="flushReport"/>
+        </methods>
+      </class> <!-- testCases.loginModule -->
+    </classes>
+  </test> <!-- LoginModule(failed) -->
+</suite> <!-- Failed suite [BatchExecution] -->
