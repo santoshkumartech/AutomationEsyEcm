@@ -2,72 +2,72 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-09T23:04:04 IST" name="Suite" finished-at="2025-01-09T23:04:13 IST" duration-ms="8885">
+  <suite started-at="2025-01-16T23:39:15 IST" name="Default suite" finished-at="2025-01-16T23:39:39 IST" duration-ms="23978">
     <groups>
     </groups>
-    <test started-at="2025-01-09T23:04:04 IST" name="login" finished-at="2025-01-09T23:04:13 IST" duration-ms="8885">
-      <class name="testCases.loginModule">
-        <test-method is-config="true" signature="setupReport(org.testng.ITestContext)[pri:0, instance:testCases.loginModule@397fbdb]" started-at="2025-01-09T23:04:03 IST" name="setupReport" finished-at="2025-01-09T23:04:04 IST" duration-ms="942" status="PASS">
+    <test started-at="2025-01-16T23:39:15 IST" name="Default test" finished-at="2025-01-16T23:39:39 IST" duration-ms="23978">
+      <class name="testCases.OrdersModule">
+        <test-method is-config="true" signature="setupReport(org.testng.ITestContext)[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:14 IST" name="setupReport" finished-at="2025-01-16T23:39:15 IST" duration-ms="357" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@dca2615]]>
+                <![CDATA[org.testng.TestRunner@244e619a]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="setupTest(org.testng.xml.XmlTest)[pri:0, instance:testCases.loginModule@397fbdb]" started-at="2025-01-09T23:04:04 IST" name="setupTest" finished-at="2025-01-09T23:04:04 IST" duration-ms="7" status="PASS">
+        <test-method is-config="true" signature="setupTest(org.testng.xml.XmlTest)[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:15 IST" name="setupTest" finished-at="2025-01-16T23:39:15 IST" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.xml.XmlTest@c28df1eb]]>
+                <![CDATA[org.testng.xml.XmlTest@5b1b1878]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.loginModule@397fbdb]" started-at="2025-01-09T23:04:04 IST" name="setup" finished-at="2025-01-09T23:04:10 IST" duration-ms="6605" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:15 IST" name="setup" finished-at="2025-01-16T23:39:21 IST" duration-ms="6717" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="configureTestReport(java.lang.reflect.Method)[pri:0, instance:testCases.loginModule@397fbdb]" started-at="2025-01-09T23:04:10 IST" name="configureTestReport" finished-at="2025-01-09T23:04:10 IST" duration-ms="9" status="PASS">
+        <test-method is-config="true" signature="configureTestReport(java.lang.reflect.Method)[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:21 IST" name="configureTestReport" finished-at="2025-01-16T23:39:21 IST" duration-ms="9" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void testCases.loginModule.loginEasyEcom_Tc001()]]>
+                <![CDATA[public void testCases.OrdersModule.createRetailOrder_Tc001()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configureTestReport -->
-        <test-method signature="loginEasyEcom_Tc001()[pri:0, instance:testCases.loginModule@397fbdb]" started-at="2025-01-09T23:04:10 IST" name="loginEasyEcom_Tc001" finished-at="2025-01-09T23:04:12 IST" duration-ms="1829" status="PASS">
+        <test-method signature="createRetailOrder_Tc001()[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:21 IST" name="createRetailOrder_Tc001" finished-at="2025-01-16T23:39:39 IST" duration-ms="17204" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginEasyEcom_Tc001 -->
-        <test-method is-config="true" signature="teardownTest(org.testng.ITestResult)[pri:0, instance:testCases.loginModule@397fbdb]" started-at="2025-01-09T23:04:12 IST" name="teardownTest" finished-at="2025-01-09T23:04:12 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- createRetailOrder_Tc001 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:39 IST" name="tearDown" finished-at="2025-01-16T23:39:39 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="teardownTest(org.testng.ITestResult)[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:39 IST" name="teardownTest" finished-at="2025-01-16T23:39:39 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginEasyEcom_Tc001 status=SUCCESS method=loginModule.loginEasyEcom_Tc001()[pri:0, instance:testCases.loginModule@397fbdb] output={null}]]]>
+                <![CDATA[[TestResult name=createRetailOrder_Tc001 status=SUCCESS method=OrdersModule.createRetailOrder_Tc001()[pri:0, instance:testCases.OrdersModule@397fbdb] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.loginModule@397fbdb]" started-at="2025-01-09T23:04:12 IST" name="tearDown" finished-at="2025-01-09T23:04:13 IST" duration-ms="372" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="flushReport()[pri:0, instance:testCases.loginModule@397fbdb]" started-at="2025-01-09T23:04:13 IST" name="flushReport" finished-at="2025-01-09T23:04:14 IST" duration-ms="868" status="PASS">
+        <test-method is-config="true" signature="flushReport()[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:39 IST" name="flushReport" finished-at="2025-01-16T23:39:39 IST" duration-ms="544" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushReport -->
-      </class> <!-- testCases.loginModule -->
-    </test> <!-- login -->
-  </suite> <!-- Suite -->
+      </class> <!-- testCases.OrdersModule -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

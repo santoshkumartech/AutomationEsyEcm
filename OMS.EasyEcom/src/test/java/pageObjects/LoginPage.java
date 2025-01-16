@@ -38,4 +38,12 @@ public class LoginPage extends BasePage {
 	public void clickLogin() {
 		loginButton.click();
 	}
+	
+	public void login(String email,String password ) {
+		emailTF.sendKeys(email);
+		continueButton.click();
+		passwordTF.sendKeys(password);
+		loginButton.click();
+		
+	}
 }

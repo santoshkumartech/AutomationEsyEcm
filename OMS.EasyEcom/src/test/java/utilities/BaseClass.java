@@ -1,4 +1,4 @@
-package testBase;
+ package utilities;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,7 +18,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.xml.XmlTest;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -30,6 +29,7 @@ public class BaseClass {
 	public Properties p;
 	static ExtentReports report;
 	public ExtentTest test;
+	
 	
 	@BeforeSuite
 	public void setupReport(ITestContext context)
@@ -60,7 +60,7 @@ public class BaseClass {
 		
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.manage().window().maximize();
 		
 		driver.get(p.getProperty("appURL"));
@@ -88,7 +88,7 @@ public class BaseClass {
 	@AfterClass
 	public void tearDown()
 	{
-		driver.quit();
+//		driver.quit();
 	}
 	
 	
@@ -98,8 +98,11 @@ public class BaseClass {
 		report.flush();
 	}
 	
+	
 	private static String getLocalDateTime() {
 		LocalDateTime DateTime = LocalDateTime.now();
 		return DateTime.getHour()+"Hr-"+DateTime.getMinute()+"Min-"+DateTime.getSecond()+"Sec "+DateTime.getDayOfMonth()+"-"+DateTime.getMonthValue()+"-"+DateTime.getYear(); 
+		
 	}
+	
 }

@@ -3,17 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.loginModule">
+      <class name="testCases.OrdersModule">
         <methods>
-          <include name="teardownTest"/>
           <include name="tearDown"/>
-          <include name="configureTestReport"/>
-          <include name="loginEasyEcom_Tc001"/>
-          <include name="setup"/>
+          <include name="createRetailOrder_Tc001"/>
           <include name="setupReport"/>
+          <include name="setupTest"/>
           <include name="flushReport"/>
+          <include name="configureTestReport"/>
+          <include name="setup"/>
+          <include name="teardownTest"/>
         </methods>
-      </class> <!-- testCases.loginModule -->
+      </class> <!-- testCases.OrdersModule -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

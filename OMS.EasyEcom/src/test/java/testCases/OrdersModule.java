@@ -1,34 +1,36 @@
 package testCases;
 
-
-import java.time.LocalDateTime;
-
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.Status;
-
-import testBase.BaseClass;
+import pageObjects.HomePage;
+import pageObjects.LoginPage;
+import pageObjects.RetailOrdersPage;
+import utilities.BaseClass;
 
 public class OrdersModule extends BaseClass {
 
 	@Test
-	public void Order_Tc001()	{		
+	public void createRetailOrder_Tc001(){
 		
-		test.log(Status.INFO, "Order 1 Email");
+		LoginPage lp = new LoginPage(driver);
+		lp.login(p.getProperty("email"), p.getProperty("password"));
+		test.log(Status.INFO, "login successfull");
 		
-		test.log(Status.INFO, "Order 1 on continue");
-		}
-	
-	@Test
-	public void Order_Tc002()	{		
+		HomePage hp = new HomePage(driver);
+		hp.naviagetToRetailOrderPage();
+		test.log(Status.INFO, "navigated to retail orders page");
 		
-		test.log(Status.INFO, "Order 2 Email");
+		RetailOrdersPage rop = new RetailOrdersPage(driver);
 		
-		test.log(Status.INFO, "Order 2 on continue");
+		rop.scrollToNameTextField();
+		test.log(Status.INFO, "scrolled till name text field is visible");
 		
-		Assert.fail();
+		rop.enterConatctPersonDetails("tester", "demo@test.com", "8856985466");
+		test.log(Status.INFO, "Entered contact person details");
 		
-		}
-	
+		rop.enterShippingAddress("Chruch Street","Bengaluru", "560085");
+		test.log(Status.INFO, "Entered shipping address details and copied same to billing adress");
+
+		
+	}
 }
