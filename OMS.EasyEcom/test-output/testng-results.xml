@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-16T23:39:15 IST" name="Default suite" finished-at="2025-01-16T23:39:39 IST" duration-ms="23978">
+  <suite started-at="2025-01-18T19:26:39 IST" name="Default suite" finished-at="2025-01-18T19:27:18 IST" duration-ms="38794">
     <groups>
     </groups>
-    <test started-at="2025-01-16T23:39:15 IST" name="Default test" finished-at="2025-01-16T23:39:39 IST" duration-ms="23978">
+    <test started-at="2025-01-18T19:26:39 IST" name="Default test" finished-at="2025-01-18T19:27:18 IST" duration-ms="38794">
       <class name="testCases.OrdersModule">
-        <test-method is-config="true" signature="setupReport(org.testng.ITestContext)[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:14 IST" name="setupReport" finished-at="2025-01-16T23:39:15 IST" duration-ms="357" status="PASS">
+        <test-method is-config="true" signature="setupReport(org.testng.ITestContext)[pri:0, instance:testCases.OrdersModule@33d512c1]" started-at="2025-01-18T19:26:39 IST" name="setupReport" finished-at="2025-01-18T19:26:39 IST" duration-ms="386" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@244e619a]]>
+                <![CDATA[org.testng.TestRunner@1866da85]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="setupTest(org.testng.xml.XmlTest)[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:15 IST" name="setupTest" finished-at="2025-01-16T23:39:15 IST" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="setupTest(org.testng.xml.XmlTest)[pri:0, instance:testCases.OrdersModule@33d512c1]" started-at="2025-01-18T19:26:39 IST" name="setupTest" finished-at="2025-01-18T19:26:39 IST" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.xml.XmlTest@5b1b1878]]>
+                <![CDATA[org.testng.xml.XmlTest@ad8a9c45]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:15 IST" name="setup" finished-at="2025-01-16T23:39:21 IST" duration-ms="6717" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.OrdersModule@33d512c1]" started-at="2025-01-18T19:26:39 IST" name="setup" finished-at="2025-01-18T19:26:43 IST" duration-ms="3533" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="configureTestReport(java.lang.reflect.Method)[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:21 IST" name="configureTestReport" finished-at="2025-01-16T23:39:21 IST" duration-ms="9" status="PASS">
+        <test-method is-config="true" signature="configureTestReport(java.lang.reflect.Method)[pri:0, instance:testCases.OrdersModule@33d512c1]" started-at="2025-01-18T19:26:43 IST" name="configureTestReport" finished-at="2025-01-18T19:26:43 IST" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -44,26 +44,52 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configureTestReport -->
-        <test-method signature="createRetailOrder_Tc001()[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:21 IST" name="createRetailOrder_Tc001" finished-at="2025-01-16T23:39:39 IST" duration-ms="17204" status="PASS">
+        <test-method signature="createRetailOrder_Tc001()[pri:1, instance:testCases.OrdersModule@33d512c1]" started-at="2025-01-18T19:26:43 IST" name="createRetailOrder_Tc001" finished-at="2025-01-18T19:26:58 IST" duration-ms="14887" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRetailOrder_Tc001 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:39 IST" name="tearDown" finished-at="2025-01-16T23:39:39 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="teardownTest(org.testng.ITestResult)[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:39 IST" name="teardownTest" finished-at="2025-01-16T23:39:39 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="teardownTest(org.testng.ITestResult)[pri:0, instance:testCases.OrdersModule@33d512c1]" started-at="2025-01-18T19:26:58 IST" name="teardownTest" finished-at="2025-01-18T19:26:58 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createRetailOrder_Tc001 status=SUCCESS method=OrdersModule.createRetailOrder_Tc001()[pri:0, instance:testCases.OrdersModule@397fbdb] output={null}]]]>
+                <![CDATA[[TestResult name=createRetailOrder_Tc001 status=SUCCESS method=OrdersModule.createRetailOrder_Tc001()[pri:1, instance:testCases.OrdersModule@33d512c1] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownTest -->
-        <test-method is-config="true" signature="flushReport()[pri:0, instance:testCases.OrdersModule@397fbdb]" started-at="2025-01-16T23:39:39 IST" name="flushReport" finished-at="2025-01-16T23:39:39 IST" duration-ms="544" status="PASS">
+        <test-method signature="VerifycreateRetailOrder_Tc002()[pri:2, instance:testCases.OrdersModule@33d512c1]" started-at="2025-01-18T19:26:58 IST" name="VerifycreateRetailOrder_Tc002" finished-at="2025-01-18T19:27:18 IST" duration-ms="20316" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifycreateRetailOrder_Tc002 -->
+        <test-method is-config="true" signature="configureTestReport(java.lang.reflect.Method)[pri:0, instance:testCases.OrdersModule@33d512c1]" started-at="2025-01-18T19:26:58 IST" name="configureTestReport" finished-at="2025-01-18T19:26:58 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testCases.OrdersModule.VerifycreateRetailOrder_Tc002()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configureTestReport -->
+        <test-method is-config="true" signature="teardownTest(org.testng.ITestResult)[pri:0, instance:testCases.OrdersModule@33d512c1]" started-at="2025-01-18T19:27:18 IST" name="teardownTest" finished-at="2025-01-18T19:27:18 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=VerifycreateRetailOrder_Tc002 status=SUCCESS method=OrdersModule.VerifycreateRetailOrder_Tc002()[pri:2, instance:testCases.OrdersModule@33d512c1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardownTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.OrdersModule@33d512c1]" started-at="2025-01-18T19:27:18 IST" name="tearDown" finished-at="2025-01-18T19:27:18 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="flushReport()[pri:0, instance:testCases.OrdersModule@33d512c1]" started-at="2025-01-18T19:27:18 IST" name="flushReport" finished-at="2025-01-18T19:27:19 IST" duration-ms="570" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushReport -->

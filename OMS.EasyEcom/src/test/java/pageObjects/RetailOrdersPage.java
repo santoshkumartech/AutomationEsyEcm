@@ -1,9 +1,10 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+import org.testng.Assert;
 
 public class RetailOrdersPage extends BasePage  {
 	
@@ -59,40 +60,95 @@ public class RetailOrdersPage extends BasePage  {
 	@FindBy(xpath="//h5[text()='Billing Address']/..//b[text()='Save']")
 	WebElement saveBillingAddress;
 	
+	@FindBy(xpath="//h5[text()='Payment Mode ']")
+	WebElement paymentModeText;
+	
+	@FindBy(xpath="//select[@class='full-width form-control ng-untouched ng-pristine ng-valid']")
+	WebElement paymentModeDropdown;
+	
+	@FindBy(xpath="//input[@placeholder='Search Product...']")
+	WebElement searchProductTF;
+	
+	//@FindBy(xpath="//tbody//input[@class='item-list-input form-control ng-valid ng-dirty ng-touched']")
+	@FindBy(xpath="//tbody//td[5]//input[@type='number']")
+	WebElement priceTF;
+	
+	@FindBy(xpath="//button[@class='btn btn-success']")
+	WebElement createOrderButton;
+	
+	@FindBy(xpath="//h2[text()='Success!']")
+	WebElement successText;
+	
+	@FindBy(xpath="//div[contains(text(),'Order No:')]")
+	WebElement orderIdText;
+	
+	@FindBy(xpath="//button[text()='OK']")
+	WebElement okButton;
+	
 	public void scrollToNameTextField() {
-        wu.scrollToElement(driver, nameTF, 3);
+        wu.scrollToElement(driver, nameTF);
     }
 	
 	public void enterConatctPersonDetails(String name, String email, String contactNo) {
 		
-		nameTF.sendKeys(name);
-		emailTF.sendKeys(email);
-		contactNoTF.sendKeys(contactNo);
-		saveContactPerson.click();
+		this.nameTF.sendKeys(name);
+		this.emailTF.sendKeys(email);
+		this.contactNoTF.sendKeys(contactNo);
+		this.saveContactPerson.click();
 	}
 		
 	public void enterShippingAddress(String street, String city,  String postalCode) {
-		streetTF.sendKeys(street);
-		cityTF.sendKeys(city);
-		countryText.click();
-		try {
-			Thread.sleep(3000);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		wu.waitUntilElementClickable(driver, 10, countryDropdownShipping);
-		countryDropdownShipping.click();
-		wu.waitUntilElementClickable(driver, 10, indiaOption);
-		indiaOption.click();
-		wu.waitUntilElementClickable(driver, 10, stateDropdownShipping);
-		stateDropdownShipping.click();
-		wu.waitUntilElementClickable(driver, 10, karnatakaOption);
-		karnatakaOption.click();
+		this.streetTF.sendKeys(street);
+		this.cityTF.sendKeys(city);
+		this.countryText.click();
 		
-		postalCodeTF.sendKeys(postalCode);
-		copyShippingAddressToBillingAddressCheckbox.click();
-		saveShippingAddress.click();
-		saveBillingAddress.click();
+		wu.waitUntilElementClickable(driver, 10, countryDropdownShipping);
+		this.countryDropdownShipping.click();
+		wu.waitUntilElementClickable(driver, 10, indiaOption);
+		this.indiaOption.click();
+		wu.waitUntilElementClickable(driver, 10, stateDropdownShipping);
+		this.stateDropdownShipping.click();
+		wu.waitUntilElementClickable(driver, 10, karnatakaOption);
+		this.karnatakaOption.click();
+		
+		this.postalCodeTF.sendKeys(postalCode);
+		this.copyShippingAddressToBillingAddressCheckbox.click();
+		this.saveShippingAddress.click();
+		this.saveBillingAddress.click();
 	}
 	
+	public void selectPaymentMode(String paymentMode) {
+		wu.scrollToElement(driver, paymentModeText);
+		wu.selectByVisibileText(paymentModeDropdown, paymentMode);
+	}
+	
+	public void searchAndValidateProduct(String SKU) {
+		wu.scrollToElement(driver, searchProductTF);
+		this.searchProductTF.sendKeys(SKU);
+		String SKUText = driver.findElement(By.xpath("//div[contains(text(), ' mob000')]")).getText();
+	//	Assert.assertEquals(SKUText, SKU, "Search product is not matching");
+		Assert.assertTrue(SKUText.contains(SKU),"Search product is not matching");
+	}
+	
+	public void enterPriceProduct(String price) {
+		wu.scrollToElement(driver, this.createOrderButton);
+		//wu.waitUntilElementVisible(driver, 10, this.priceTF);
+		this.priceTF.clear();
+		this.priceTF.sendKeys(price);
+	}
+	
+	public void clickCreateButton() {
+		
+		wu.scrollToElement(driver, this.createOrderButton);
+		this.createOrderButton.click();
+	}
+	
+	public void verifyOrderCreated() {
+		wu.waitUntilElementVisible(driver, 10, this.successText);
+		wu.isDisplayed(this.successText);
+	}
+	
+	public void clickOkButton() {
+		this.okButton.click();
+	}
 }

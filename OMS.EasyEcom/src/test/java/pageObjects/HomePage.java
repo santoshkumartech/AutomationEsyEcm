@@ -1,6 +1,5 @@
 package pageObjects;
 
-import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
 	
-	public Properties p;
 	
 	public HomePage(WebDriver driver)
 	{
@@ -25,14 +23,19 @@ public class HomePage extends BasePage {
 	WebElement plus_Icon;
 	
 	@FindBy(xpath="//i[@class='fa fa-shopping-basket']")
-	WebElement createRetailOrder;
+	WebElement createOrder;
 	
 	@FindBy(xpath="//select[@id='selectOrder']")
 	WebElement selectOrderType_DropDown;
 	
-	public void naviagetToRetailOrderPage() {
-		plus_Icon.click();
-		createRetailOrder.click();
+	public void naviagetToCreateOrderPage() {
+		this.plus_Icon.click();
+		this.createOrder.click();
 	}
+	
+	public void selectOrderType(String orderType) {
+		wu.selectByVisibileText(this.selectOrderType_DropDown, orderType);
+	}
+	
 	
 }
