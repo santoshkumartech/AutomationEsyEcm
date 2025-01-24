@@ -1,5 +1,6 @@
 package testCases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 import pageObjects.HomePage;
@@ -28,9 +29,14 @@ public class OrdersModule extends BaseClass {
 		hp.naviagetToCreateOrderPage();
 		test.log(Status.INFO, "navigated to create orders page");
 		
-		hp.selectOrderType(orderType);
-		test.log(Status.INFO, "selected "+ orderType );
-
+		try {
+				hp.selectOrderType(orderType);
+				test.log(Status.INFO, "selected "+ orderType );
+			} 
+		catch (Exception e)
+			{
+				System.out.println("Create Retail order is selected by default");
+			}
 		
 		RetailOrdersPage rop = new RetailOrdersPage(driver);
 		
@@ -42,12 +48,15 @@ public class OrdersModule extends BaseClass {
 		
 		rop.enterShippingAddress("Chruch Street","Bengaluru", "560085");
 		test.log(Status.INFO, "Entered shipping address details and copied same to billing adress");
+		
+//		String referenceNumber = driver.findElement(By.xpath("//input[@placeholder='Enter Reference No.']")).getDomAttribute("value");
+//		System.out.println(referenceNumber);
 
 		rop.selectPaymentMode(paymentMode);
-		test.log(Status.INFO, "selected the" + paymentMode + "of payment");
+		test.log(Status.INFO, "selected the " + paymentMode + " of payment");
 		
 		rop.searchAndValidateProduct(sku);
-		test.log(Status.INFO, "selected the" + sku + "of payment");
+		test.log(Status.INFO, "selected the " + sku + " of payment");
 
 		rop.enterPriceProduct(price);
 		test.log(Status.INFO, "entered" + price + "for the product"+ sku);
@@ -61,16 +70,20 @@ public class OrdersModule extends BaseClass {
 		rop.clickOkButton();
 		test.log(Status.INFO, "clicked ok button in success popup");
 
-
 	}
 	
 	@Test(priority=2)
 	public void VerifycreateRetailOrder_Tc002() {
 		
 		OrdersDetailsPage odp = new OrdersDetailsPage(driver);
-		
 		odp.switchToOrderDetailsPage();
 		test.log(Status.INFO, "Switched to orders details tab");
+		
+		boolean paymentIsSelected = wu.verifyOptionIsSelected(odp.getPaymentDropdown(), paymentMode);
+		System.out.println("Is the "+paymentMode+" payment mode selected: " + paymentIsSelected);
+		Assert.assertTrue(paymentIsSelected, "The payment mode is not selected as expected.");
 
+		
+		
 	}
 }

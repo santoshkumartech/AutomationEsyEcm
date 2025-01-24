@@ -29,6 +29,7 @@ public class BaseClass {
 	public Properties p;
 	static ExtentReports report;
 	public ExtentTest test;
+	public WebdriverUtility wu = new WebdriverUtility();
 	
 	
 	@BeforeSuite
@@ -60,7 +61,7 @@ public class BaseClass {
 		
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		
 		driver.get(p.getProperty("appURL"));

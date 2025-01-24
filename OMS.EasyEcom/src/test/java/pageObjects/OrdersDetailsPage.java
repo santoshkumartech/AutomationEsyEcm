@@ -16,8 +16,18 @@ public class OrdersDetailsPage extends BasePage {
 	@FindBy(xpath="//div[contains(text(),'ORD/')]")
 	WebElement orderNumberText;
 	
+	@FindBy(xpath="//td[@id='Total Invoice Amount']")
+	WebElement totalInvoiceAmount;
+	
+	@FindBy(xpath="//select[@f_type='payment_mode_id']")
+	WebElement paymentDropdown;
 	
 	public void switchToOrderDetailsPage() {
-		wu.switchToWindowContainingElement(driver, overviewText);
+		wu.switchToWindowContainingElement(driver, overviewText);	
 	}
+	
+	public WebElement getPaymentDropdown() {
+		return this.paymentDropdown;
+	}
+	
 }

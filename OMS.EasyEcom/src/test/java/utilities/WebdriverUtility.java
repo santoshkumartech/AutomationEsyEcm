@@ -1,9 +1,9 @@
 package utilities;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -17,6 +17,20 @@ public class WebdriverUtility  {
 	{
 		Select sel = new Select(element);
 		sel.selectByVisibleText(text);
+	}
+	
+	public boolean verifyOptionIsSelected( WebElement element, String visibleText)
+	{
+		Select sel = new Select(element);
+		List<WebElement> allOptions = sel.getAllSelectedOptions();
+		
+		for(WebElement option:allOptions) {
+			if(option.getText().equals(visibleText))
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public void waitUntilElementClickable(WebDriver driver, int  timeout, WebElement element) {
@@ -52,20 +66,24 @@ public class WebdriverUtility  {
 			wait.until(ExpectedConditions.visibilityOf(element));
 		}
 	 
-	 public void switchToWindowContainingElement(WebDriver driver, WebElement elementToValidate) {
-	        Set<String> allWindowHandles = driver.getWindowHandles();
+	 
+	 public void switchToWindowContainingElement(WebDriver driver, WebElement elementTovalidate) {
+		    Set<String> allWindowHandles = driver.getWindowHandles();
 
-	        for (String windowHandle : allWindowHandles) {
-	                driver.switchTo().window(windowHandle);
-	                try {
-	                    if (elementToValidate.isDisplayed()) {
-	                       break;
-	                    }
-	                } catch (Exception e) {
-	                System.out.println("Web Element is not displyed");
-	            }
-	        }
-	   }
+		    for (String windowHandle : allWindowHandles) {
+		        driver.switchTo().window(windowHandle);
+
+		        try {
+		            if (elementTovalidate.isDisplayed()) {
+		                System.out.println("Switched to the window containing the element.");
+		                break; // Exit the method once the correct window is found
+		            }
+		        } 
+		        catch (Exception e) {
+		        }
+		    }
+		}
+
 }
 	 
 

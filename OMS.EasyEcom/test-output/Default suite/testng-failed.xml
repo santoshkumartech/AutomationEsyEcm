@@ -6,8 +6,8 @@
       <class name="testCases.OrdersModule">
         <methods>
           <include name="tearDown"/>
-          <include name="createRetailOrder_Tc001"/>
           <include name="setupReport"/>
+          <include name="VerifycreateRetailOrder_Tc002"/>
           <include name="setupTest"/>
           <include name="flushReport"/>
           <include name="configureTestReport"/>
