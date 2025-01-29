@@ -18,6 +18,7 @@ public class RetailOrdersModule extends BaseClass {
 	String collectableAmount ="15000";
 	String discount = "500";
 	String shippingCharge = "40";
+	String qty ="2";
 	
 	@Test(priority=1)
 	public void B2C_001(){
@@ -48,9 +49,6 @@ public class RetailOrdersModule extends BaseClass {
 		
 		rop.enterShippingAddress("Chruch Street","Bengaluru", "560085");
 		test.log(Status.INFO, "Entered shipping address details and copied same to billing adress");
-		
-//		String referenceNumber = driver.findElement(By.xpath("//input[@placeholder='Enter Reference No.']")).getDomAttribute("value");
-//		System.out.println(referenceNumber);
 
 		rop.selectPaymentMode(paymentMode);
 		test.log(Status.INFO, "selected the " + paymentMode + " of payment");
@@ -283,6 +281,74 @@ public class RetailOrdersModule extends BaseClass {
 			test.log(Status.INFO,"Expected total "+expectedTotal+" and Actual total "+actualTotal+" Test Failed! The total values does not match.");
             System.out.println("Test Failed! The expected total was " + expectedTotal + " but the actual total was " + actualTotal);
         }
+	}
+	
+	@Test(priority=5)
+	public void B2C_005() {
 		
+		HomePage hp = new HomePage(driver);
+		hp.naviagetToCreateOrderPage();
+		test.log(Status.INFO, "navigated to create orders page");
+		
+		try {
+				hp.selectOrderType(orderType);
+				test.log(Status.INFO, "selected "+ orderType );
+			} 
+		catch (Exception e)
+			{
+				System.out.println("Create Retail order is selected by default");
+			}
+		
+		RetailOrdersPage rop = new RetailOrdersPage(driver);
+		rop.scrollToNameTextField();
+		test.log(Status.INFO, "scrolled till name text field is visible");
+		
+		rop.enterConatctPersonDetails("tester", "demo@test.com", "8856985466");
+		test.log(Status.INFO, "Entered contact person details");
+		
+		rop.enterShippingAddress("Chruch Street","Bengaluru", "560085");
+		test.log(Status.INFO, "Entered shipping address details and copied same to billing adress");
+
+		rop.selectPaymentMode(paymentMode);
+		test.log(Status.INFO, "selected the " + paymentMode + " of payment");
+		
+		rop.searchAndValidateProduct(sku);
+		test.log(Status.INFO, "selected the " + sku + " Product");
+		
+		rop.enterQty(qty);
+		test.log(Status.INFO, "Entered " + qty + " in QTY textfield for the product "+ sku);
+
+		rop.enterPriceProduct(price);
+		test.log(Status.INFO, "entered price " + price + " for the product "+ sku);
+		
+		rop.clickCreateButton();
+		test.log(Status.INFO, "clicked on create order button");
+		
+		rop.verifyOrderCreated();
+		test.log(Status.INFO, "Order created successfully");
+
+		rop.clickOkButton();
+		test.log(Status.INFO, "clicked ok button in success popup");
+		
+		OrdersDetailsPage odp = new OrdersDetailsPage(driver);
+		odp.switchToOrderDetailsPage();
+		test.log(Status.INFO, "Switched to orders details tab");
+		
+		double expectedTotal = ju.calculateTotalAfterMultiplyingQuantity(price, qty);
+		String actualTotalText = odp.getTotalInvoiceAmount().getText();
+		actualTotalText = actualTotalText.replaceAll("[^0-9.]", "");
+		double actualTotal = Double.parseDouble(actualTotalText);
+		if (expectedTotal == actualTotal) {
+			test.log(Status.INFO,"Expected total "+expectedTotal+" and Actual total "+actualTotal+" Test Passed! The total values match.");
+        } else {
+			test.log(Status.INFO,"Expected total "+expectedTotal+" and Actual total "+actualTotal+" Test Failed! The total values does not match.");
+        }
+		
+		String quantityInOrdersDetailsPage = odp.getquantityText().getDomAttribute("value");
+		if (qty.equals(quantityInOrdersDetailsPage)) {
+			test.log(Status.INFO,"The total quantity values match.");
+        } else {
+			test.log(Status.INFO,"The total quantity values do not match.");
+        }
 	}
 }

@@ -67,6 +67,9 @@ public class RetailOrdersPage extends BasePage  {
 	@FindBy(xpath="//input[@placeholder='Search Product...']")
 	WebElement searchProductTF;
 	
+	@FindBy(xpath="//tbody//td[3]//input[@type='number']")
+	WebElement qtyTF;
+	
 	@FindBy(xpath="//tbody//td[5]//input[@type='number']")
 	WebElement priceTF;
 	
@@ -152,7 +155,7 @@ public class RetailOrdersPage extends BasePage  {
 	}
 	
 	public void verifyOrderCreated() {
-		wu.waitUntilElementVisible(driver, 10, this.successText);
+		wu.waitUntilElementVisible(driver, 5, this.successText);
 		wu.isDisplayed(this.successText);
 	}
 	
@@ -177,5 +180,10 @@ public class RetailOrdersPage extends BasePage  {
 	public void enterShippingCharges(String shippingCharges) {
 		this.shippingChargeTF.clear();
 		this.shippingChargeTF.sendKeys(shippingCharges);
+	}
+	
+	public void enterQty(String qty) {
+		this.qtyTF.clear();
+		this.qtyTF.sendKeys(qty);
 	}
 }

@@ -25,6 +25,9 @@ public class OrdersDetailsPage extends BasePage {
 	@FindBy(xpath="//label[contains(text(),'Collectable Amount:')]/../..//div[@class='col-md-6']")
 	WebElement collectableAmountText;
 	
+	@FindBy(xpath="//input[@style='max-width:70px']")
+	WebElement quantityText;
+	
 	public void switchToOrderDetailsPage() {
 		wu.switchToWindowContainingElement(driver, overviewText);	
 	}
@@ -39,5 +42,9 @@ public class OrdersDetailsPage extends BasePage {
 	
 	public WebElement getTotalInvoiceAmount() {
 		return this.totalInvoiceAmount;
+	}
+	
+	public WebElement getquantityText() {
+		return this.quantityText;
 	}
 }

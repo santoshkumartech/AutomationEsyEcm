@@ -37,4 +37,22 @@ public class JavaUtility {
 	        return 0.0;  // Return 0 if there's a parsing error
 	    }
 	}
+	
+	public double calculateTotalAfterMultiplyingQuantity(String price, String quantity) {
+	    try {
+	        // Convert price and discount from String to double
+	        double priceValue = Double.parseDouble(price);
+	        double quantityValue = Double.parseDouble(quantity);
+
+	        // Calculate total after discount
+	        double totalValue = priceValue * quantityValue;
+	        
+	        // Return the total value
+	        return totalValue;
+
+	    } catch (NumberFormatException e) {
+	        System.out.println("Invalid number format: " + e.getMessage());
+	        return 0.0;  // Return 0 if there's a parsing error
+	    }
+	}
 }
