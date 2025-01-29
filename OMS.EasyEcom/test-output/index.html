@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\user\AppData\Local\Temp\testng-eclipse--829985633\testng-customsuite.xml</span>
+                    <span>C:\Users\user\AppData\Local\Temp\testng-eclipse-1130023033\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,12 +104,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testCases.OrdersModule" class="method navigator-link" hash-for-method="VerifycreateRetailOrder_Tc002">VerifycreateRetailOrder_Tc002</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testCases.OrdersModule" class="method navigator-link" hash-for-method="createRetailOrder_Tc001">createRetailOrder_Tc001</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="testCases.RetailOrdersModule" class="method navigator-link" hash-for-method="B2C_004">B2C_004</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -127,21 +122,14 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testCases.OrdersModule</span>
+              <span class="class-name">testCases.RetailOrdersModule</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="VerifycreateRetailOrder_Tc002">
-                  </a> <!-- VerifycreateRetailOrder_Tc002 -->
-                  <span class="method-name">VerifycreateRetailOrder_Tc002</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="createRetailOrder_Tc001">
-                  </a> <!-- createRetailOrder_Tc001 -->
-                  <span class="method-name">createRetailOrder_Tc001</span>
+                  <a name="B2C_004">
+                  </a> <!-- B2C_004 -->
+                  <span class="method-name">B2C_004</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -149,7 +137,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\user\AppData\Local\Temp\testng-eclipse--829985633\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\user\AppData\Local\Temp\testng-eclipse-1130023033\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -158,12 +146,20 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testCases.OrdersModule&quot;/&gt;
+      &lt;class name=&quot;testCases.RetailOrdersModule&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;B2C_004&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testCases.RetailOrdersModule --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testCases.OrdersModule&quot;/&gt;
+      &lt;class name=&quot;testCases.RetailOrdersModule&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;B2C_004&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testCases.RetailOrdersModule --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -206,20 +202,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'createRetailOrder_Tc001')
-data.setCell(0, 2, 'testCases.OrdersModule')
-data.setCell(0, 3, 12505);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'VerifycreateRetailOrder_Tc002')
-data.setCell(1, 2, 'testCases.OrdersModule')
-data.setCell(1, 3, 10319);
+data.setCell(0, 1, 'B2C_004')
+data.setCell(0, 2, 'testCases.RetailOrdersModule')
+data.setCell(0, 3, 30471);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 22 seconds</span>
+              <span class="suite-total-time">Total running time: 30 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -234,9 +226,20 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">testCases.RetailOrdersModule</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">B2C_003</span>
+                <br/>
+                <span class="ignored-method-name">B2C_002</span>
+                <br/>
+                <span class="ignored-method-name">B2C_001</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -245,50 +248,38 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testCases.OrdersModule</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testCases.RetailOrdersModule</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setupReport(org.testng.TestRunner@1bc776b7)</span>
+                <span class="method-name">setupReport(org.testng.TestRunner@45404d5)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">setupTest(org.testng.xml.XmlTest@7b1b4db5)</span>
-                <span class="method-start">261 ms</span>
+                <span class="method-name">setupTest(org.testng.xml.XmlTest@1dbc3015)</span>
+                <span class="method-start">477 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
-                <span class="method-start">277 ms</span>
+                <span class="method-start">504 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">configureTestReport(public void testCases.OrdersModule.createRetailOrder_Tc001())</span>
-                <span class="method-start">2708 ms</span>
+                <span class="method-name">configureTestReport(public void testCases.RetailOrdersModule.B2C_004())</span>
+                <span class="method-start">5211 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">createRetailOrder_Tc001</span>
-                <span class="method-start">2720 ms</span>
+                <span class="method-name">B2C_004</span>
+                <span class="method-start">5223 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">teardownTest([TestResult name=createRetailOrder_Tc001 status=SUCCESS method=OrdersModule.createRetailOrder_Tc001(...)</span>
-                <span class="method-start">15228 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">configureTestReport(public void testCases.OrdersModule.VerifycreateRetailOrder_Tc002())</span>
-                <span class="method-start">15232 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">VerifycreateRetailOrder_Tc002</span>
-                <span class="method-start">15234 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">teardownTest([TestResult name=VerifycreateRetailOrder_Tc002 status=SUCCESS method=OrdersModule.VerifycreateRetail...)</span>
-                <span class="method-start">25555 ms</span>
+                <span class="method-name">teardownTest([TestResult name=B2C_004 status=SUCCESS method=RetailOrdersModule.B2C_004()[pri:4, instance:testCase...)</span>
+                <span class="method-start">35701 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">25556 ms</span>
+                <span class="method-start">35703 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">flushReport</span>
-                <span class="method-start">25586 ms</span>
+                <span class="method-start">36223 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

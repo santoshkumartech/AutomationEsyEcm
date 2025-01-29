@@ -3,18 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.OrdersModule">
+      <class name="testCases.RetailOrdersModule">
         <methods>
           <include name="tearDown"/>
           <include name="setupReport"/>
-          <include name="VerifycreateRetailOrder_Tc002"/>
           <include name="setupTest"/>
           <include name="flushReport"/>
           <include name="configureTestReport"/>
           <include name="setup"/>
           <include name="teardownTest"/>
+          <include name="B2C_004"/>
         </methods>
-      </class> <!-- testCases.OrdersModule -->
+      </class> <!-- testCases.RetailOrdersModule -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

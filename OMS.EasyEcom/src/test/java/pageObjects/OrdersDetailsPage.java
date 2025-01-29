@@ -22,6 +22,9 @@ public class OrdersDetailsPage extends BasePage {
 	@FindBy(xpath="//select[@f_type='payment_mode_id']")
 	WebElement paymentDropdown;
 	
+	@FindBy(xpath="//label[contains(text(),'Collectable Amount:')]/../..//div[@class='col-md-6']")
+	WebElement collectableAmountText;
+	
 	public void switchToOrderDetailsPage() {
 		wu.switchToWindowContainingElement(driver, overviewText);	
 	}
@@ -30,4 +33,11 @@ public class OrdersDetailsPage extends BasePage {
 		return this.paymentDropdown;
 	}
 	
+	public WebElement collectableAmountText() {
+		return this.collectableAmountText;
+	}
+	
+	public WebElement getTotalInvoiceAmount() {
+		return this.totalInvoiceAmount;
+	}
 }

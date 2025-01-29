@@ -30,6 +30,7 @@ public class BaseClass {
 	static ExtentReports report;
 	public ExtentTest test;
 	public WebdriverUtility wu = new WebdriverUtility();
+	public JavaUtility ju = new JavaUtility();
 	
 	
 	@BeforeSuite
@@ -89,7 +90,7 @@ public class BaseClass {
 	@AfterClass
 	public void tearDown()
 	{
-//		driver.quit();
+		driver.quit();
 	}
 	
 	
