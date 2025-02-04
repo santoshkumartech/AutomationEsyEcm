@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,8 +26,14 @@ public class OrdersDetailsPage extends BasePage {
 	@FindBy(xpath="//label[contains(text(),'Collectable Amount:')]/../..//div[@class='col-md-6']")
 	WebElement collectableAmountText;
 	
-	@FindBy(xpath="//input[@style='max-width:70px']")
-	WebElement quantityText;
+//	@FindBy(xpath="//input[@style='max-width:70px']")
+//	WebElement quantityText;
+	
+//	@FindBy(xpath="//table[@id='orderItemsTables']/tbody/tr[1]/td[7]")
+//	WebElement skuText;
+	
+	@FindBy(xpath="//table[@id='orderItemsTables']/tbody/tr[2]/td[7]")
+	WebElement sku2Text;
 	
 	public void switchToOrderDetailsPage() {
 		wu.switchToWindowContainingElement(driver, overviewText);	
@@ -44,7 +51,21 @@ public class OrdersDetailsPage extends BasePage {
 		return this.totalInvoiceAmount;
 	}
 	
-	public WebElement getquantityText() {
-		return this.quantityText;
+//	public WebElement getquantityText() {
+//		return this.quantityText;
+//	}
+	
+//	public String getSkuText() {
+//		return this.skuText.getText();
+//	}
+	
+	public String getSkuText(String sku) {
+		return driver.findElement(By.xpath("//a[contains(text(),'"+sku+"')]")).getText();
 	}
+	
+	public WebElement getQuantity(String sku) {
+	//a[contains(text(),'mob000')]/../../..//input[@style='max-width:70px']
+	return this.driver.findElement(By.xpath("//a[contains(text(),'"+sku+"')]/../../..//input[@style='max-width:70px']"));
+	}
+	
 }

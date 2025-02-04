@@ -5,7 +5,6 @@
     <classes>
       <class name="testCases.RetailOrdersModule">
         <methods>
-          <include name="B2C_005"/>
           <include name="tearDown"/>
           <include name="setupReport"/>
           <include name="setupTest"/>
@@ -13,6 +12,7 @@
           <include name="configureTestReport"/>
           <include name="setup"/>
           <include name="teardownTest"/>
+          <include name="B2C_009"/>
         </methods>
       </class> <!-- testCases.RetailOrdersModule -->
     </classes>

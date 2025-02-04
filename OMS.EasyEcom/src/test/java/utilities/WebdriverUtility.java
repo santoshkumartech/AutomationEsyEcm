@@ -83,6 +83,28 @@ public class WebdriverUtility  {
 		        }
 		    }
 		}
+	 
+	 public void switchToLastOpenedWindowAndCloseOthers(WebDriver driver) {
+		    Set<String> allWindowHandles = driver.getWindowHandles();
+		    String lastWindowHandle = "";
+		    
+		    // Iterate through window handles to find the last one
+		    for (String windowHandle : allWindowHandles) {
+		        lastWindowHandle = windowHandle;
+		    }
+		    
+		    // Close all other windows except the last one
+		    for (String windowHandle : allWindowHandles) {
+		        if (!windowHandle.equals(lastWindowHandle)) {
+		            driver.switchTo().window(windowHandle);
+		            driver.close();
+		        }
+		    }
+		    
+		    // Switch to the last opened window
+		    driver.switchTo().window(lastWindowHandle);
+		}
+
 
 }
 	 

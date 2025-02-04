@@ -33,7 +33,6 @@ public class RetailOrdersPage extends BasePage  {
 	@FindBy(xpath="//h5[text()='Shipping Address']/..//label[text()='Country ']")
 	WebElement countryText;
 	
-	
 	@FindBy(xpath="//h5[text()='Shipping Address']/..//div[text()='Select Country']/../following-sibling::span")
 	WebElement countryDropdownShipping;
 	
@@ -67,14 +66,20 @@ public class RetailOrdersPage extends BasePage  {
 	@FindBy(xpath="//input[@placeholder='Search Product...']")
 	WebElement searchProductTF;
 	
-	@FindBy(xpath="//tbody//td[3]//input[@type='number']")
-	WebElement qtyTF;
+//	@FindBy(xpath="//tbody//td[3]//input[@type='number']")
+//	WebElement qtyTF;
 	
-	@FindBy(xpath="//tbody//td[5]//input[@type='number']")
-	WebElement priceTF;
+//	@FindBy(xpath="//tbody//td[5]//input[@type='number']")
+//	WebElement priceTF;
 	
-	@FindBy(xpath="//tbody//td[6]//input[@type='number']")
-	WebElement discountTF;
+//	@FindBy(xpath="//tbody//td[6]//input[@type='number']")
+//	WebElement discountTF;
+	
+	@FindBy(xpath="//i[@class='fa fa-times-circle delete-item text-danger']")
+	WebElement removeIcon;
+	
+	@FindBy(xpath="//textarea[@class='additional-notes form-control ng-valid ng-touched ng-dirty']")
+	WebElement additionalNotesTF;
 	
 	//b[text()='Total: ']/../..//div[@class='col-md-4 col-6']
 	@FindBy(xpath="(//td[@class='text-center'])[1]")
@@ -138,14 +143,34 @@ public class RetailOrdersPage extends BasePage  {
 	public void searchAndValidateProduct(String SKU) {
 		wu.scrollToElement(driver, searchProductTF);
 		this.searchProductTF.sendKeys(SKU);
-		String SKUText = driver.findElement(By.xpath("//div[contains(text(), ' mob000')]")).getText();
+		String SKUText = driver.findElement(By.xpath("//div[contains(text(), '"+SKU+"')]")).getText();
 		Assert.assertTrue(SKUText.contains(SKU),"Search product is not matching");
 	}
 	
-	public void enterPriceProduct(String price) {
+	public void enterPriceProduct(String sku,String price) {
 		wu.scrollToElement(driver, this.createOrderButton);
-		this.priceTF.clear();
-		this.priceTF.sendKeys(price);
+//		this.priceTF.clear();
+//		this.priceTF.sendKeys(price);
+		WebElement priceTF = driver.findElement(By.xpath("//div[contains(text(), '"+sku+"')]/../../td[5]//input[@type='number']"));
+		wu.waitUntilElementVisible(driver, 2, priceTF);
+		priceTF.clear();
+		priceTF.sendKeys(price);
+	}
+	
+	public void enterQty(String sku,String qty) {
+		WebElement qtyTF = driver.findElement(By.xpath("//div[contains(text(), '"+sku+"')]/../../td[3]//input[@type='number']"));
+		wu.waitUntilElementVisible(driver, 2, qtyTF);
+		qtyTF.clear();
+		qtyTF.sendKeys(qty);
+//		this.qtyTF.clear();
+//		this.qtyTF.sendKeys(qty);
+	}
+	
+	public void enterDiscount(String sku,String discount) {
+		WebElement discountTF = driver.findElement(By.xpath("//div[contains(text(), '"+sku+"')]/../../td[6]//input[@type='number']"));
+		wu.waitUntilElementVisible(driver, 2, discountTF);
+		discountTF.clear();
+		discountTF.sendKeys(discount);
 	}
 	
 	public void clickCreateButton() {
@@ -168,11 +193,6 @@ public class RetailOrdersPage extends BasePage  {
 		this.collectableAmountTF.sendKeys(collectableAmount);
 	}
 	
-	public void enterDiscount(String discount) {
-		this.discountTF.clear();
-		this.discountTF.sendKeys(discount);
-	}
-	
 	public WebElement getTotalText() {
 		return this.totalText;
 	}
@@ -182,8 +202,12 @@ public class RetailOrdersPage extends BasePage  {
 		this.shippingChargeTF.sendKeys(shippingCharges);
 	}
 	
-	public void enterQty(String qty) {
-		this.qtyTF.clear();
-		this.qtyTF.sendKeys(qty);
+	public void clickRemoveIcon() {
+		this.removeIcon.click();
+		}
+	public void enterAdditionalNotes(String notes) {
+		wu.waitUntilElementClickable(driver, 0, additionalNotesTF);
+		this.additionalNotesTF.sendKeys(notes);
 	}
+	
 }
