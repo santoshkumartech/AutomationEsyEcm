@@ -12,7 +12,7 @@
           <include name="configureTestReport"/>
           <include name="setup"/>
           <include name="teardownTest"/>
-          <include name="B2C_009"/>
+          <include name="B2C_006"/>
         </methods>
       </class> <!-- testCases.RetailOrdersModule -->
     </classes>

@@ -149,8 +149,6 @@ public class RetailOrdersPage extends BasePage  {
 	
 	public void enterPriceProduct(String sku,String price) {
 		wu.scrollToElement(driver, this.createOrderButton);
-//		this.priceTF.clear();
-//		this.priceTF.sendKeys(price);
 		WebElement priceTF = driver.findElement(By.xpath("//div[contains(text(), '"+sku+"')]/../../td[5]//input[@type='number']"));
 		wu.waitUntilElementVisible(driver, 2, priceTF);
 		priceTF.clear();
@@ -162,8 +160,6 @@ public class RetailOrdersPage extends BasePage  {
 		wu.waitUntilElementVisible(driver, 2, qtyTF);
 		qtyTF.clear();
 		qtyTF.sendKeys(qty);
-//		this.qtyTF.clear();
-//		this.qtyTF.sendKeys(qty);
 	}
 	
 	public void enterDiscount(String sku,String discount) {

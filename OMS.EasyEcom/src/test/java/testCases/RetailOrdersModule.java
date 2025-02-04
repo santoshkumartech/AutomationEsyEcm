@@ -358,7 +358,7 @@ public class RetailOrdersModule extends BaseClass {
 	
 	@Test(priority=6)
 	public void B2C_006() {
-			
+	
 		HomePage hp = new HomePage(driver);
 		hp.naviagetToCreateOrderPage();
 		test.log(Status.INFO, "navigated to create orders page");
@@ -394,8 +394,8 @@ public class RetailOrdersModule extends BaseClass {
 		rop.searchAndValidateProduct(sku2);
 		test.log(Status.INFO, "selected the " + sku2 + " Product");
 		
-		rop.enterPriceProduct(sku, price);
-		test.log(Status.INFO, "entered price " + price + " for the product "+ sku);
+		rop.enterPriceProduct(sku2, price);
+		test.log(Status.INFO, "entered price " + price + " for the product "+ sku2);
 		
 		rop.clickCreateButton();
 		test.log(Status.INFO, "clicked on create order button");
@@ -492,11 +492,7 @@ public class RetailOrdersModule extends BaseClass {
 	}
 	
 	@Test(priority=8)
-	public void B2C_008() throws InterruptedException {
-
-		LoginPage lp = new LoginPage(driver);
-		lp.login(p.getProperty("email"), p.getProperty("password"));
-		test.log(Status.INFO, "login successfull");
+	public void B2C_008() {
 		
 		HomePage hp = new HomePage(driver);
 		hp.naviagetToCreateOrderPage();
@@ -579,10 +575,6 @@ public class RetailOrdersModule extends BaseClass {
 	
 	@Test(priority=9)
 	public void B2C_009() {
-		
-		LoginPage lp = new LoginPage(driver);
-		lp.login(p.getProperty("email"), p.getProperty("password"));
-		test.log(Status.INFO, "login successfull");
 		
 		HomePage hp = new HomePage(driver);
 		hp.naviagetToCreateOrderPage();
