@@ -646,13 +646,98 @@ public class RetailOrdersModule extends BaseClass {
 		
 		double expectedTotalOfSku1 = ju.totalAfterDiscountAndQuantities(price,qty, discount);
 		double expectedTotalOfSku2 = ju.totalAfterDiscountAndQuantities(price,qty, discount2);
-		double expectedTotal = ju.addTwoNumbers(expectedTotalOfSku1, expectedTotalOfSku2);
+		double expectedTotal = ju.add(expectedTotalOfSku1, expectedTotalOfSku2);
 		
 		if (expectedTotal == actualTotalInOrderDetailPage) {
 			test.log(Status.INFO,"Expected total "+expectedTotal+" and Actual total "+actualTotalInOrderDetailPage+" Test Passed! The total values match.");
         } else {
 			test.log(Status.INFO,"Expected total "+expectedTotal+" and Actual total "+actualTotalInOrderDetailPage+" Test Failed! The total values does not match.");
         }
+	}
+	
+	@Test(priority=10)
+	public void B2C_010() {
 		
+		HomePage hp = new HomePage(driver);
+		hp.naviagetToCreateOrderPage();
+		test.log(Status.INFO, "navigated to create orders page");
+		
+		try {
+				hp.selectOrderType(orderType);
+				test.log(Status.INFO, "selected "+ orderType );
+			} 
+		catch (Exception e)
+			{
+				System.out.println("Create Retail order is selected by default");
+			}
+		
+		RetailOrdersPage rop = new RetailOrdersPage(driver);
+		rop.scrollToNameTextField();
+		test.log(Status.INFO, "scrolled till name text field is visible");
+		
+		rop.enterConatctPersonDetails("tester", "demo@test.com", "8856985466");
+		test.log(Status.INFO, "Entered contact person details");
+		
+		rop.enterShippingAddress("Chruch Street","Bengaluru", "560085");
+		test.log(Status.INFO, "Entered shipping address details and copied same to billing adress");
+
+		rop.selectPaymentMode(paymentMode);
+		test.log(Status.INFO, "selected the " + paymentMode + " of payment");
+		
+		rop.searchAndValidateProduct(sku);
+		test.log(Status.INFO, "selected the " + sku + " Product");
+		
+		rop.enterPriceProduct(sku, price);
+		test.log(Status.INFO, "entered price " + price + " for the product "+ sku);
+		
+		rop.enterQty(sku,qty);
+		test.log(Status.INFO, "Entered " + qty + " in QTY textfield for the product "+ sku);
+		
+		rop.enterDiscount(sku, discount);
+		test.log(Status.INFO, "entered discount " + discount + " for the product "+ sku);
+		
+		rop.searchAndValidateProduct(sku2);
+		test.log(Status.INFO, "selected the " + sku2 + " Product");
+		
+		rop.enterPriceProduct(sku2, price);
+		test.log(Status.INFO, "entered price " + price + " for the product "+ sku2);
+		
+		rop.enterQty(sku2,qty);
+		test.log(Status.INFO, "Entered " + qty + " in QTY textfield for the product "+ sku2);
+		
+		rop.enterDiscount(sku2, discount2);
+		test.log(Status.INFO, "entered discount " + discount2 + " for the product "+ sku2);
+		
+		rop.enterShippingCharges(shippingCharge);
+		test.log(Status.INFO, "entered shipping charge of " + shippingCharge + " for the product "+ sku);
+		
+		rop.clickCreateButton();
+		test.log(Status.INFO, "clicked on create order button");
+		
+		rop.verifyOrderCreated();
+		test.log(Status.INFO, "Order created successfully");
+
+		rop.clickOkButton();
+		test.log(Status.INFO, "clicked ok button in success popup");
+		
+		OrdersDetailsPage odp = new OrdersDetailsPage(driver);
+		odp.switchToOrderDetailsPage();
+		test.log(Status.INFO, "Switched to orders details tab");
+		wu.switchToLastOpenedWindowAndCloseOthers(driver);
+		
+		String actualTotalTextInOrderDetailPage = odp.getTotalInvoiceAmount().getText();
+		actualTotalTextInOrderDetailPage = actualTotalTextInOrderDetailPage.replaceAll("[^0-9.]", "");
+		double actualTotalInOrderDetailPage = Double.parseDouble(actualTotalTextInOrderDetailPage);
+		double shippingChargesConvereted = ju.stringToDouble(shippingCharge);
+		
+		double expectedTotalOfSku1 = ju.totalAfterDiscountAndQuantities(price,qty, discount);
+		double expectedTotalOfSku2 = ju.totalAfterDiscountAndQuantities(price,qty, discount2);
+		double expectedTotal = ju.add(expectedTotalOfSku1, expectedTotalOfSku2,shippingChargesConvereted);
+		
+		if (expectedTotal == actualTotalInOrderDetailPage) {
+			test.log(Status.INFO,"Expected total "+expectedTotal+" and Actual total "+actualTotalInOrderDetailPage+" Test Passed! The total values match.");
+        } else {
+			test.log(Status.INFO,"Expected total "+expectedTotal+" and Actual total "+actualTotalInOrderDetailPage+" Test Failed! The total values does not match.");
+        }
 	}
 }

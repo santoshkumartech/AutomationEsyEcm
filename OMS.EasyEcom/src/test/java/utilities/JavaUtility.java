@@ -56,7 +56,7 @@ public class JavaUtility {
 	    }
 	}
 	
-	 public static double stringToDouble(String str) {
+	 public double stringToDouble(String str) {
 	        try {
 	            // Handle null strings as well
 	            if (str == null || str.isEmpty()) {
@@ -70,8 +70,13 @@ public class JavaUtility {
 	        }
 	    }
 	 
-	 public double addTwoNumbers(double num1,double num2) {
+	 public double add(double num1,double num2) {
 		 double total = num1 + num2;
+		 return total;
+	 }
+	 
+	 public double add(double num1,double num2,double num3) {
+		 double total = num1 + num2+num3;
 		 return total;
 	 }
 	 
@@ -81,6 +86,16 @@ public class JavaUtility {
 	     double discountValue = Double.parseDouble(discount);
 	     
 	     double totalValue = (priceValue * quantityValue)- discountValue;
+	     return totalValue;
+	 }
+	 
+	 public double totalAfterDiscountQuantityShippingCharges(String price, String quantity, String discount, String shippingCharges) {
+		 double priceValue = Double.parseDouble(price);
+		 double quantityValue = Double.parseDouble(quantity);
+	     double discountValue = Double.parseDouble(discount);
+	     double shippingChargesValue = Double.parseDouble(shippingCharges);
+
+	     double totalValue = (priceValue * quantityValue)- discountValue + shippingChargesValue;
 	     return totalValue;
 	 }
 }

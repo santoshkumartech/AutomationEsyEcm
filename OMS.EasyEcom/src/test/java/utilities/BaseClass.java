@@ -31,7 +31,7 @@ public class BaseClass {
 	public ExtentTest test;
 	public WebdriverUtility wu = new WebdriverUtility();
 	public JavaUtility ju = new JavaUtility();
-	
+	public ExcelUtil eu = new ExcelUtil();
 	
 	@BeforeSuite
 	public void setupReport(ITestContext context)
@@ -90,7 +90,7 @@ public class BaseClass {
 	@AfterClass
 	public void tearDown()
 	{
-	//	driver.quit();
+		driver.quit();
 	}
 	
 	

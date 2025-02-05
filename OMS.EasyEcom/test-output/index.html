@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\user\AppData\Local\Temp\testng-eclipse-2059763567\testng-customsuite.xml</span>
+                    <span>C:\Users\user\AppData\Local\Temp\testng-eclipse-1552754449\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">9 methods,   9 passed</span>
+                    <span class="method-stats">10 methods, 2 failed,   8 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testCases.RetailOrdersModule" class="method navigator-link" hash-for-method="B2C_009">B2C_009</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testCases.RetailOrdersModule" class="method navigator-link" hash-for-method="B2C_010">B2C_010</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -142,11 +161,6 @@
                         <a href="#" panel-name="suite-Default_suite" title="testCases.RetailOrdersModule" class="method navigator-link" hash-for-method="B2C_008">B2C_008</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testCases.RetailOrdersModule" class="method navigator-link" hash-for-method="B2C_009">B2C_009</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
@@ -159,6 +173,138 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">testCases.RetailOrdersModule</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="B2C_009">
+                  </a> <!-- B2C_009 -->
+                  <span class="method-name">B2C_009</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;b _ngcontent-jng-c464=&quot;&quot;&gt;...&lt;/b&gt; is not clickable at point (271, 441). Other element would receive the click: &lt;div _ngcontent-jng-c210=&quot;&quot; class=&quot;preloader&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=132.0.6834.160)
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f9674394ec4269fa15c985477503b239, clickElement {id=f.10498866F2439B0627B38419FDBA1CC8.d.8ECB0D12B3C7EFF46D4AAB7742115CE6.e.3611}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.160, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54180}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54180/devtoo..., se:cdpVersion: 132.0.6834.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f9674394ec4269fa15c985477503b239)] -&gt; xpath: //h5[text()=&apos;Contact Person&apos;]/..//b[text()=&apos;Save&apos;]]
+Session ID: f9674394ec4269fa15c985477503b239
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy19.click(Unknown Source)
+	at pageObjects.RetailOrdersPage.enterConatctPersonDetails(RetailOrdersPage.java:115)
+	at testCases.RetailOrdersModule.B2C_009(RetailOrdersModule.java:596)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="B2C_010">
+                  </a> <!-- B2C_010 -->
+                  <span class="method-name">B2C_010</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;i _ngcontent-jng-c212=&quot;&quot; aria-hidden=&quot;true&quot; class=&quot;fa fa-shopping-basket&quot;&gt;&lt;/i&gt; is not clickable at point (935, 167). Other element would receive the click: &lt;div _ngcontent-jng-c210=&quot;&quot; class=&quot;preloader&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=132.0.6834.160)
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f9674394ec4269fa15c985477503b239, clickElement {id=f.10498866F2439B0627B38419FDBA1CC8.d.8ECB0D12B3C7EFF46D4AAB7742115CE6.e.3548}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.160, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54180}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54180/devtoo..., se:cdpVersion: 132.0.6834.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f9674394ec4269fa15c985477503b239)] -&gt; xpath: //i[@class=&apos;fa fa-shopping-basket&apos;]]
+Session ID: f9674394ec4269fa15c985477503b239
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy19.click(Unknown Source)
+	at pageObjects.HomePage.naviagetToCreateOrderPage(HomePage.java:32)
+	at testCases.RetailOrdersModule.B2C_010(RetailOrdersModule.java:662)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -221,19 +367,12 @@
                   <span class="method-name">B2C_008</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="B2C_009">
-                  </a> <!-- B2C_009 -->
-                  <span class="method-name">B2C_009</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\user\AppData\Local\Temp\testng-eclipse-2059763567\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\user\AppData\Local\Temp\testng-eclipse-1552754449\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -290,43 +429,47 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(9);
+data.addRows(10);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'B2C_001')
 data.setCell(0, 2, 'testCases.RetailOrdersModule')
-data.setCell(0, 3, 28258);
+data.setCell(0, 3, 29306);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'B2C_008')
 data.setCell(1, 2, 'testCases.RetailOrdersModule')
-data.setCell(1, 3, 25662);
+data.setCell(1, 3, 25073);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'B2C_009')
+data.setCell(2, 1, 'B2C_007')
 data.setCell(2, 2, 'testCases.RetailOrdersModule')
-data.setCell(2, 3, 25152);
+data.setCell(2, 3, 24624);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'B2C_007')
+data.setCell(3, 1, 'B2C_002')
 data.setCell(3, 2, 'testCases.RetailOrdersModule')
-data.setCell(3, 3, 24367);
+data.setCell(3, 3, 23072);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'B2C_006')
 data.setCell(4, 2, 'testCases.RetailOrdersModule')
-data.setCell(4, 3, 22443);
+data.setCell(4, 3, 22532);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'B2C_002')
+data.setCell(5, 1, 'B2C_003')
 data.setCell(5, 2, 'testCases.RetailOrdersModule')
-data.setCell(5, 3, 22296);
+data.setCell(5, 3, 22317);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'B2C_005')
 data.setCell(6, 2, 'testCases.RetailOrdersModule')
-data.setCell(6, 3, 21741);
+data.setCell(6, 3, 22164);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'B2C_003')
+data.setCell(7, 1, 'B2C_004')
 data.setCell(7, 2, 'testCases.RetailOrdersModule')
-data.setCell(7, 3, 21648);
+data.setCell(7, 3, 21544);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'B2C_004')
+data.setCell(8, 1, 'B2C_009')
 data.setCell(8, 2, 'testCases.RetailOrdersModule')
-data.setCell(8, 3, 21591);
+data.setCell(8, 3, 2532);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'B2C_010')
+data.setCell(9, 2, 'testCases.RetailOrdersModule')
+data.setCell(9, 3, 1332);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -359,132 +502,148 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">testCases.RetailOrdersModule</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setupReport(org.testng.TestRunner@512dc0e0)</span>
+                <span class="method-name">setupReport(org.testng.TestRunner@1cab19e2)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">setupTest(org.testng.xml.XmlTest@9fc08938)</span>
-                <span class="method-start">378 ms</span>
+                <span class="method-name">setupTest(org.testng.xml.XmlTest@d47990e3)</span>
+                <span class="method-start">506 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
-                <span class="method-start">400 ms</span>
+                <span class="method-start">538 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">configureTestReport(public void testCases.RetailOrdersModule.B2C_001())</span>
-                <span class="method-start">4889 ms</span>
+                <span class="method-start">7643 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">B2C_001</span>
-                <span class="method-start">4901 ms</span>
+                <span class="method-start">7657 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardownTest([TestResult name=B2C_001 status=SUCCESS method=RetailOrdersModule.B2C_001()[pri:1, instance:testCase...)</span>
-                <span class="method-start">33167 ms</span>
+                <span class="method-start">36967 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">B2C_002</span>
-                <span class="method-start">33175 ms</span>
-              </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">configureTestReport(public void testCases.RetailOrdersModule.B2C_002())</span>
-                <span class="method-start">33175 ms</span>
+                <span class="method-start">36972 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">B2C_002</span>
+                <span class="method-start">36973 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardownTest([TestResult name=B2C_002 status=SUCCESS method=RetailOrdersModule.B2C_002()[pri:2, instance:testCase...)</span>
-                <span class="method-start">55473 ms</span>
+                <span class="method-start">60048 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">configureTestReport(public void testCases.RetailOrdersModule.B2C_003())</span>
-                <span class="method-start">55475 ms</span>
+                <span class="method-start">60048 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">B2C_003</span>
-                <span class="method-start">55476 ms</span>
+                <span class="method-start">60049 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardownTest([TestResult name=B2C_003 status=SUCCESS method=RetailOrdersModule.B2C_003()[pri:3, instance:testCase...)</span>
-                <span class="method-start">77127 ms</span>
+                <span class="method-start">82368 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">configureTestReport(public void testCases.RetailOrdersModule.B2C_004())</span>
-                <span class="method-start">77130 ms</span>
+                <span class="method-start">82371 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">B2C_004</span>
-                <span class="method-start">77130 ms</span>
+                <span class="method-start">82371 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardownTest([TestResult name=B2C_004 status=SUCCESS method=RetailOrdersModule.B2C_004()[pri:4, instance:testCase...)</span>
-                <span class="method-start">98723 ms</span>
+                <span class="method-start">103917 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">configureTestReport(public void testCases.RetailOrdersModule.B2C_005())</span>
-                <span class="method-start">98725 ms</span>
+                <span class="method-start">103919 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">B2C_005</span>
-                <span class="method-start">98725 ms</span>
+                <span class="method-start">103919 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">teardownTest([TestResult name=B2C_005 status=SUCCESS method=RetailOrdersModule.B2C_005()[pri:5, instance:testCase...)</span>
-                <span class="method-start">120468 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">configureTestReport(public void testCases.RetailOrdersModule.B2C_006())</span>
-                <span class="method-start">120469 ms</span>
+                <span class="method-start">126085 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">teardownTest([TestResult name=B2C_005 status=SUCCESS method=RetailOrdersModule.B2C_005()[pri:5, instance:testCase...)</span>
+                <span class="method-start">126085 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">B2C_006</span>
-                <span class="method-start">120470 ms</span>
+                <span class="method-start">126086 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardownTest([TestResult name=B2C_006 status=SUCCESS method=RetailOrdersModule.B2C_006()[pri:6, instance:testCase...)</span>
-                <span class="method-start">142915 ms</span>
+                <span class="method-start">148619 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">configureTestReport(public void testCases.RetailOrdersModule.B2C_007())</span>
-                <span class="method-start">142916 ms</span>
-              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">B2C_007</span>
-                <span class="method-start">142917 ms</span>
+                <span class="method-start">148620 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">configureTestReport(public void testCases.RetailOrdersModule.B2C_007())</span>
+                <span class="method-start">148620 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="configuration-method after">
                 <span class="method-name">teardownTest([TestResult name=B2C_007 status=SUCCESS method=RetailOrdersModule.B2C_007()[pri:7, instance:testCase...)</span>
-                <span class="method-start">167286 ms</span>
+                <span class="method-start">173249 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">configureTestReport(public void testCases.RetailOrdersModule.B2C_008())</span>
-                <span class="method-start">167287 ms</span>
+                <span class="method-start">173250 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">B2C_008</span>
-                <span class="method-start">167288 ms</span>
+                <span class="method-start">173251 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardownTest([TestResult name=B2C_008 status=SUCCESS method=RetailOrdersModule.B2C_008()[pri:8, instance:testCase...)</span>
-                <span class="method-start">192951 ms</span>
+                <span class="method-start">198325 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">configureTestReport(public void testCases.RetailOrdersModule.B2C_009())</span>
-                <span class="method-start">192952 ms</span>
+                <span class="method-start">198327 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">B2C_009</span>
-                <span class="method-start">192953 ms</span>
+                <span class="method-start">198327 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">teardownTest([TestResult name=B2C_009 status=SUCCESS method=RetailOrdersModule.B2C_009()[pri:9, instance:testCase...)</span>
-                <span class="method-start">218107 ms</span>
+                <span class="method-name">teardownTest([TestResult name=B2C_009 status=FAILURE method=RetailOrdersModule.B2C_009()[pri:9, instance:testCase...)</span>
+                <span class="method-start">200864 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">configureTestReport(public void testCases.RetailOrdersModule.B2C_010())</span>
+                <span class="method-start">200868 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">B2C_010</span>
+                <span class="method-start">200869 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardownTest([TestResult name=B2C_010 status=FAILURE method=RetailOrdersModule.B2C_010()[pri:10, instance:testCas...)</span>
+                <span class="method-start">202205 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">218109 ms</span>
+                <span class="method-start">202206 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">flushReport</span>
-                <span class="method-start">218166 ms</span>
+                <span class="method-start">202707 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
